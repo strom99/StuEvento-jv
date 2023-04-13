@@ -20,7 +20,7 @@ class EventFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'description' => $this->faker->name(),
-            'location' => $this->faker->email(),
+            'location' => $this->faker->country(),
             'date' => now(),
             'user_id' => User::inRandomOrder()->value('id'),
             'created_at' => now(),

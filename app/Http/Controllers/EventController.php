@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Doctrine\DBAL\Schema\View;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
-        //
+        return view('eventos');
     }
 
     /**
