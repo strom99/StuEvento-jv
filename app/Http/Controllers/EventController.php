@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Doctrine\DBAL\Schema\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -14,7 +16,11 @@ class EventController extends Controller
 
     public function index()
     {
-        return view('eventos');
+        $user = auth()->user()->getAuthIdentifier();
+        $events = Event::where('user_id', $user)->get();
+        return view('eventos', [
+            'eventos' => $events
+        ]);
     }
 
     /**
