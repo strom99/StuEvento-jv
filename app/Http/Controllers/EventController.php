@@ -28,7 +28,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -44,7 +44,10 @@ class EventController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $event = Event::find($id);
+        return view('event', [
+            'event' => $event
+        ]);
     }
 
     /**
