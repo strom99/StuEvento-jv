@@ -31,7 +31,7 @@
             <button class="bg-teal-100 hover:bg-teal-200 p-3 rounded-md text-gray-500 cursor-pointer" >Create Event</button>
         </form>
         @if(session('message'))
-            <span>{{ session('message')}}</span>
+            <span class="message">{{ session('message')}}</span>
         @endif
     </div>
 </x-app-layout>

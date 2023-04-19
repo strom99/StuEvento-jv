@@ -2,19 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-
-table thead tr th{
+table thead tr th {
     padding: 10px 0px;
     width: 340px;
     min-width: 100px;
 }
 
-table tbody tr td{
+table tbody tr td {
     text-align: center;
     padding: 6px 0px;
 }
 
-table thead tr th:last-child{
+table thead tr th:last-child {
     width: 100px;
     min-width: auto;
+}
+
+.message {
+    background-color: #58f0a0;
+    padding: 10px;
+    display: flex;
+    width: fit-content;
+    margin-top: 25px;
+    border-radius: 10px;
+    filter: sepia(1);
+    text-transform: capitalize;
 }

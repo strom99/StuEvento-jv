@@ -44,4 +44,7 @@
 
         
     </div>
+            @if(session('message'))
+            <span class="message">{{ session('message')}}</span>
+        @endif
 </x-app-layout>

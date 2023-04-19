@@ -23,6 +23,10 @@
         @endif
         </div>
                 <a class="bg-teal-100 hover:bg-teal-200 p-3 rounded-md text-gray-500 cursor-pointer" 
-            href="/events/{{$event->id}}/register">Register Participant</a>    
+            href="/events/{{$event->id}}/edit">Edit Event</a> 
+               
     </div>
+    <a class="block bg-teal-100 hover:bg-teal-200 p-3 rounded-md text-gray-500 cursor-pointer w-max mt-4" 
+            href="/events/{{$event->id}}/register">Register Participant</a>
+    
 </x-app-layout>

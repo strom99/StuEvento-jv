@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\User;
 use App\Models\UserEventsAttendee;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class UserEventsAttendeeController extends Controller
     public function storeAttendee(Request $data, String $id)
     {
         $message = null;
-        $user = User::find($id);
+        $user = User::find($data->get('user'));
 
         // almacenar relacion evento - usuario
         $relacion = new UserEventsAttendee();
@@ -24,7 +25,6 @@ class UserEventsAttendeeController extends Controller
             $message = 'Opss..';
         }
 
-        dd($message);
         return redirect()->back()->with([
             'message' => $message
         ]);

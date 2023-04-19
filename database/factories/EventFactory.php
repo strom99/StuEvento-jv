@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +22,7 @@ class EventFactory extends Factory
             'title' => $this->faker->sentence(),
             'description' => $this->faker->name(),
             'location' => $this->faker->country(),
-            'date' => now(),
+            'date' => Carbon::now()->format('Y-m-d H:i'),
             'user_id' => User::inRandomOrder()->value('id'),
             'created_at' => now(),
             'updated_at' => now()

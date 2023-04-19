@@ -14,10 +14,11 @@
                         <li class="flex justify-between">
                             
                             {{ $asistent->name}}
-                            <form action="" method="post">
-                                <input type="hidden" value="{{ $asistent->id}}">
-                                @method('DELETE')
+                            <form action="/events/{{ $event->id}}" method="post">
+                                                                @method('DELETE')
                                 @csrf
+                                <input type="hidden" name="user" value="{{ $asistent->id}}">
+
                                 <button class="bg-red-600 p-2 rounded-lg text-slate-50 hover:bg-red-500">Remove</button>
                             </form>
                         </li>
@@ -27,7 +28,7 @@
             <span>0 participants</span>
         @endif
         <span class="bg-teal-100 p-2">To Add</span>
-        @if($noregisted)
+        @if(count($noregisted) != 0)
         <ul class="w-[500px] flex gap-2 flex-col">
             @foreach($noregisted as $noreg)
                         <li class="flex justify-between">
@@ -44,10 +45,9 @@
         @else
         <span>Nothing to add</span>
         @endif
-
         </form>
         @if(session('message'))
-            <span>{{ session('message')}}</span>
+            <span class="message">{{ session('message')}}</span>
         @endif
     </div>
 </x-app-layout>
