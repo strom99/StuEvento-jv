@@ -175,11 +175,9 @@ class EventController extends Controller
         ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id, Request $req)
     {
+        //eliminamos al participante de un evento
         $message = null;
         try {
             $user = UserEventsAttendee::where('user_id', $req->get('user'))
