@@ -27,7 +27,7 @@
                         <td>{{$evento->description}}</td>
                         <td>{{ $evento->location}}</td>
                         <td>
-                        <a class="bg-teal-100 hover:bg-teal-200 p-3 rounded-md text-gray-500 cursor-pointer" 
+                        <a class="bg-teal-100 hover:bg-teal-200 p-1 rounded-md text-gray-500 cursor-pointer" 
                         href="events/{{ $evento->id }}">
                         View
                         </a>
